@@ -29,6 +29,10 @@ def desertores(df_anterior, df_posterior):
     desertores['DESERTOR'] = 1
     estudiantes_regulares['DESERTOR'] = 0
 
+    # Eliminar registros con valores ' ' en EDAD_ALU en df_anterior
+    desertores = desertores[desertores['EDAD_ALU'] != ' ']
+    estudiantes_regulares = estudiantes_regulares[estudiantes_regulares['EDAD_ALU'] != ' ']
+    
     # Año de df_anterior
     year = str(df_anterior['AGNO'].unique()[0])
 
