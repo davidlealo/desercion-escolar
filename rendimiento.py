@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
 def analisis_rendimiento(df_anterior, df_posterior, r_anterior):
     # Filtrar los estudiantes que no son prebásica o de educación para adultos
