@@ -29,8 +29,11 @@ def desertores(df_anterior, df_posterior):
     desertores['DESERTOR'] = 1
     estudiantes_regulares['DESERTOR'] = 0
 
-    # Exportar en carpeta data/tablas dataframes a csv identificando el AGNO del df_anterior
+    # Año de df_anterior
     year = str(df_anterior['AGNO'].unique()[0])
-    desertores.to_csv('data/tablas/desertores'+  year +'.csv')
-    estudiantes_regulares.to_csv('data/tablas/regulares'+  year +'.csv')
-    
+
+    # Exportar en carpeta data/tablas dataframes a csv identificando el AGNO del df_anterior con separador ;
+    desertores.to_csv('data/tablas/desertores'+  year +'.csv', sep=';')
+    estudiantes_regulares.to_csv('data/tablas/regulares'+  year +'.csv', sep=';')
+
+
