@@ -104,7 +104,7 @@ def desertores(df_anterior, df_posterior):
     estudiantes_regulares['ENS'] = estudiantes_regulares['ENS'].astype(str)
     estudiantes_regulares['DESERTOR'] = estudiantes_regulares['DESERTOR'].astype(str)
 
-
+    
     # Año de df_anterior
     year = str(df_anterior['AGNO'].unique()[0])
 
