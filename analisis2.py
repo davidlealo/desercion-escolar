@@ -37,13 +37,15 @@ def desertoresr(df_anterior, df_posterior):
     desertores['EDAD_ALU'] = desertores['EDAD_ALU'].astype(int)
     estudiantes_regulares['EDAD_ALU'] = estudiantes_regulares['EDAD_ALU'].astype(int)
 
+    # Combinar los dataframes de desertores y estudiantes regulares
+    df_combinado = pd.concat([desertores, estudiantes_regulares])
+
     
     # Año de df_anterior
     year = str(df_anterior['AGNO'].unique()[0])
 
-    # Exportar en carpeta data/tablas dataframes a csv identificando el AGNO del df_anterior con separador ;
-    desertores.to_csv('data/tablas/desertores'+  year +'.csv', sep=';')
-    estudiantes_regulares.to_csv('data/tablas/regulares'+  year +'.csv', sep=';')
+    # Exportar en carpeta data/tablas el dataframe combinado a csv identificando el AGNO del df_anterior con separador ;
+    df_combinado.to_csv('data/tablas/combinado' + year + '.csv', sep=';')
 
 
 def estudiantes(df_anterior, df_posterior):
